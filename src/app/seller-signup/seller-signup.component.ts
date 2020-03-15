@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model/user';
-import { UserService } from '../services/user.service';
+
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Seller } from '../model/seller';
+
+
 import { SellerService } from '../service/seller.service';
+import { Seller } from '../model/seller';
 
 @Component({
   selector: 'app-seller-signup',
@@ -37,17 +39,16 @@ export class SellerSignupComponent implements OnInit {
       this.isNew = true;
       this.seller = {
         id: 0,
-        username: "",
-        mobileNumber:"",
+        userName: "",       
         password: "",
         confirmPassword:"",
-        brand:""
+        
       };
     }
   }
 
   save() {
-    let ob: Observable<User>;
+    let ob: Observable<Seller>;
 
     if (this.isNew) {
       ob = this.service.add(this.seller);
@@ -55,14 +56,13 @@ export class SellerSignupComponent implements OnInit {
     ob.subscribe(
       (data) => {
         
-        this.router.navigateByUrl("/adc");
+        this.router.navigateByUrl("/adp");
       },
       (errResponse) => {
         this.msg = errResponse.error;
 
       }
     );
-    
   }
 
 }

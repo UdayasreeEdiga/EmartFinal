@@ -47,7 +47,18 @@ input[type=text]:focus, input[type=password]:focus {
 .button:hover {
   opacity:1;
 } */
+.bg-img {
+  /* The image used */
+  background-image: url("src/assets/key.jpg");
 
+  min-height: 1000px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
 
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../model/user';
-import { UserService } from '../services/user.service';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -34,7 +34,7 @@ export class RegistrationComponent implements OnInit {
       this.isNew = true;
       this.user = {
         id: 0,
-        username: "",
+        userName: "",
         password: "",
         confirmPassword:"",
       };

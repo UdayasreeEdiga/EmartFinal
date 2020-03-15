@@ -10,7 +10,7 @@ export class SellerService {
   baseUrl:string;
 
   constructor(private httpClient :HttpClient) {
-    this.baseUrl="http://localhost:7777/users/users"; 
+    this.baseUrl="http://localhost:5451/sellers/sellers"; 
 }
 getAll() : Observable<Seller []>{
   return this.httpClient.get<Seller []>(this.baseUrl);
@@ -18,8 +18,8 @@ getAll() : Observable<Seller []>{
  getById(id:number) : Observable<Seller >{ 
   return this.httpClient.get<Seller >(`${this.baseUrl}/${id}`);
  }
- add(user:Seller ) : Observable<Seller>{
-   return this.httpClient.post<Seller>(this.baseUrl,Seller);
+ add(seller:Seller ) : Observable<Seller>{
+   return this.httpClient.post<Seller>(this.baseUrl,seller);
  }
 
 }
